@@ -69,3 +69,5 @@ sns.boxplot(x="Sales",data=df)
 sns.distplot(df["Sales"])
 plt.figure(figsize=(50,20))
 sns.histplot(x="Sales",data=df)
+```
+# OUTPUT
