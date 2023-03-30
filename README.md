@@ -43,3 +43,29 @@ sns.boxplot(x='BloodPressure',data=df)
 sns.scatterplot(data=df) 
 ```
 ## (2) SuperStore.csv
+``` python 
+from matplotlib import pyplot
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+df=pd.read_csv("/content/SuperStore.csv")
+df
+df.info()
+df.describe()
+df.dtypes
+df['Postal Code'] = df["Postal Code"].fillna(df['Postal Code'].mode()[0])
+df['Postal Code'].value_counts()
+sns.boxplot(x="Postal Code",data=df)
+sns.countplot(x="Postal Code",data=df)
+sns.distplot(df["Postal Code"])
+sns.histplot(x="Postal Code",data=df)
+df.skew()
+sns.histplot(x="Sales",data=df)
+df.kurtosis()
+sns.boxplot(x="Postal Code",data=df)
+sns.boxplot(x="Row ID",data=df)
+plt.figure(figsize=(17,7))
+sns.boxplot(x="Sales",data=df)
+sns.distplot(df["Sales"])
+plt.figure(figsize=(50,20))
+sns.histplot(x="Sales",data=df)
